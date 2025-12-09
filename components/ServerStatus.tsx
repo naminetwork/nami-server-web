@@ -22,19 +22,32 @@ export function ServerStatus() {
     useEffect(() => {
         const fetchStatus = async () => {
             try {
-                const res = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}`);
+                // Using mcstatus.io as it provides reliable real-time data
+                const res = await fetch(`https://api.mcstatus.io/v2/status/java/${SERVER_IP}`);
                 const data = await res.json();
 
-                // If offline or data missing, use fallback or show offline.
-                // However, for best UX in this starting phase, we'll assign proper data.
-                setStatus(data);
+                if (data.online) {
+                    setStatus({
+                        online: true,
+                        players: {
+                            online: data.players.online,
+                            max: data.players.max
+                        },
+                        version: data.version?.name_clean || data.version?.name || "Unknown"
+                    });
+                } else {
+                    setStatus({
+                        online: false,
+                        players: { online: 0, max: 0 },
+                        version: "-"
+                    });
+                }
             } catch (error) {
                 console.error("Failed to fetch status", error);
-                // Fallback
                 setStatus({
-                    online: true,
-                    players: { online: 128, max: 500 },
-                    version: "1.20.4"
+                    online: false,
+                    players: { online: 0, max: 0 },
+                    version: "-"
                 });
             } finally {
                 setLoading(false);
@@ -42,7 +55,7 @@ export function ServerStatus() {
         };
 
         fetchStatus();
-        const interval = setInterval(fetchStatus, 60000);
+        const interval = setInterval(fetchStatus, 30000); // 30s update
         return () => clearInterval(interval);
     }, []);
 
