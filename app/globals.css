@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Ocean / Wave Theme - Light Mode (Default) */
+  --background: #f8fafc;
+  /* Slate 50 */
+  --foreground: #0f172a;
+  /* Slate 900 */
+
+  --primary: #0284c7;
+  /* Sky 600 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #e2e8f0;
+  /* Slate 200 */
+  --secondary-foreground: #0f172a;
+
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --border: #cbd5e1;
+  /* Slate 300 */
+}
+
+.dark {
+  /* Ocean / Wave Theme - Dark Mode */
+  --background: #0f172a;
+  /* Richer Slate 900 */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+
+  --primary: #3b82f6;
+  /* Blue 500 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #1e293b;
+  /* Slate 800 */
+  --secondary-foreground: #e2e8f0;
+
+  --accent: #06b6d4;
+  /* Cyan 500 */
+  --accent-foreground: #ffffff;
+
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --border: #334155;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-outfit);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Markdown Styling - Theme Aware */
+.prose h1,
+.prose h2,
+.prose h3 {
+  @apply mb-4 text-foreground font-bold;
+}
+
+.prose h1 {
+  @apply text-4xl mt-8 border-b border-border pb-4;
+}
+
+.prose h2 {
+  @apply text-2xl mt-8;
+}
+
+.prose h3 {
+  @apply text-xl mt-6;
+}
+
+.prose p {
+  @apply text-muted-foreground leading-7 mb-4;
+}
+
+.prose ul {
+  @apply list-disc list-outside ml-6 space-y-2 text-muted-foreground;
+}
+
+.prose ol {
+  @apply list-decimal list-outside ml-6 space-y-2 text-muted-foreground;
+}
+
+.prose strong {
+  @apply text-foreground font-bold;
+}
+
+.prose a {
+  @apply text-primary hover:underline transition-colors;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary bg-secondary/50 py-2 px-4 rounded-r-lg italic text-muted-foreground my-6;
+}
+
+.prose code {
+  @apply bg-secondary px-1.5 py-0.5 rounded text-sm font-mono text-secondary-foreground;
+}
+
+.prose pre {
+  @apply bg-secondary p-4 rounded-xl overflow-x-auto my-6 border border-border;
+}
+
+.prose table {
+  @apply w-full border-collapse my-8 text-sm;
+}
+
+.prose th {
+  @apply border-b border-border bg-secondary/80 px-4 py-3 text-left font-bold text-foreground;
+}
+
+.prose td {
+  @apply border-b border-border px-4 py-3 text-muted-foreground;
+}
+
+.prose hr {
+  @apply border-border my-8;
 }

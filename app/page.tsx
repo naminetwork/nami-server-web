@@ -1,65 +1,97 @@
-import Image from "next/image";
+import { Hero } from "@/components/Hero";
+import { ServerStatus } from "@/components/ServerStatus";
+import Link from "next/link";
+import { Youtube } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+    <div className="pb-20">
+      <Hero />
+
+      {/* Floating Status Section */}
+      <div className="px-4 relative z-10 mt-10">
+        <ServerStatus />
+      </div>
+
+      <div className="mx-auto mt-24 max-w-4xl px-4 text-center">
+        <h2 className="text-3xl font-bold text-foreground">なみサーバーとは？</h2>
+        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          なみサーバーは2025年8月に公開されたクロスプレイ対応サーバーです。<br />
+          今まで、約1500名の方に参加していただき、最高同時接続数は51人を記録しました。<br />
+          <span className="text-sm opacity-70">※2025年12月時点での記録です。</span>
+        </p>
+
+        <div className="mt-8 flex justify-center">
+          <Link
+            href="https://www.youtube.com/@Lunaa_MC"
             target="_blank"
-            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-white transition-transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <Youtube className="h-5 w-5" />
+            公式YouTubeチャンネル
+          </Link>
         </div>
-      </main>
+      </div>
+
+      <section className="mx-auto mt-32 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-block rounded-full bg-blue-500/10 px-4 py-1.5 text-sm font-bold text-blue-500 mb-6">
+            Features
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">サーバー紹介</h2>
+          <p className="mt-4 text-muted-foreground">なみサーバーで遊べる主なゲームモード</p>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Minigame Server */}
+          <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm transition-all hover:shadow-xl hover:border-primary/50 dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <h3 className="relative mb-6 text-2xl font-bold text-foreground flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              ミニゲーム（ロビー）
+            </h3>
+            <div className="space-y-6 text-muted-foreground">
+              <div>
+                <h4 className="font-bold text-foreground">■ TNTRUN</h4>
+                <p className="mt-1">足元のブロックがどんどん消えていく中で、最後まで落ちずに走り続けるゲーム。走るルートやスピード、他のプレイヤーとの駆け引きが勝敗を分けます。手に汗にぎる “奈落に落ちたら終了” のサバイバルレース！</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground">■ DUEL</h4>
+                <p className="mt-1">1対1で戦うガチの決闘モード。装備はゲーム開始時に渡され、腕と読み合いだけで勝負が決まります。「タイマンで勝負したい！」という時にぴったり。</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground">■ INFINITY PARKOUR</h4>
+                <p className="mt-1">どれだけ先へ進めるか挑戦する終わりのないパルクール。コースは次々自動生成され、ミスするまでずっと記録を伸ばせます。集中力とテクニックが試されるやり込み系モード・・・など</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Nation Server */}
+          <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm transition-all hover:shadow-xl hover:border-primary/50 dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <h3 className="relative mb-6 text-2xl font-bold text-foreground flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              国家サーバー
+            </h3>
+            <div className="space-y-4 text-muted-foreground">
+              <p>なみ鯖の国家では、土地を買って自分の家や町を作ったり、みんなで国を発展させたりしながら自由に遊べます。</p>
+              <p>働いたりお店を開いたりしてお金を貯め、自分の町をどんどん大きくしていく楽しさがあります。</p>
+              <p>ワールドは地図で確認できるので、位置関係が分かりやすく、探索や建築計画もしやすい環境です。建国した場所の建物はしっかり保護されているので、壊される心配をせずに安心して建築できます。</p>
+              <p>初心者でものんびりと、上級者はとことん発展を目指して、どんな遊び方もOK。チャットはDiscordとも連携しているので、連絡や会話がスムーズです。</p>
+              <p className="font-bold text-foreground/90">仲間と一緒に“自分たちの国”を作り上げてみたい人にぴったりのサーバーです！</p>
+            </div>
+            <div className="mt-8">
+              <Link
+                href="http://nami-kokka-map.mcsv.win:3347/"
+                target="_blank"
+                className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary/80 hover:text-primary"
+              >
+                国家サーバーマップを見る
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
