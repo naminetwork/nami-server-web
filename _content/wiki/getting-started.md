@@ -1,6 +1,6 @@
 ---
 title: "始め方 (Getting Started)"
-description: "なみサーバーでの冒険の始め方"
+description: "なみサーバーでの始め方"
 ---
 
 # なみサーバーの始め方

@@ -12,7 +12,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Nami Server | Minecraft",
-  description: "Nami Serverの公式サイトです。冒険に参加しよう。",
+  description: "Nami Serverの公式サイトです",
 };
 
 export default function RootLayout({
