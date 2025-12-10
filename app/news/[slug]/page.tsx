@@ -1,6 +1,7 @@
 import { getAllMarkdownFiles, getMarkdownContent } from "@/lib/markdown";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
     const news = getAllMarkdownFiles("news");
@@ -21,7 +22,7 @@ export default async function NewsArticlePage({ params }: any) {
     const { slug } = await params;
     const data = await getMarkdownContent("news", `${slug}.md`);
 
-    if (!data) return <div>Not Found</div>;
+    if (!data) return notFound();
 
     return (
         <div className="min-h-screen px-4 py-20">

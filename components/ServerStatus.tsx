@@ -33,7 +33,7 @@ export function ServerStatus() {
                             online: data.players.online,
                             max: data.players.max
                         },
-                        version: data.version?.name_clean || data.version?.name || "Unknown"
+                        version: data.version?.name_clean || data.version?.name || "不明"
                     });
                 } else {
                     setStatus({

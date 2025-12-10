@@ -1,6 +1,7 @@
 import { getAllMarkdownFiles, getMarkdownContent } from "@/lib/markdown";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
     const articles = getAllMarkdownFiles("wiki");
@@ -23,14 +24,7 @@ export default async function WikiArticlePage({ params }: any) {
     const data = await getMarkdownContent("wiki", `${slug}.md`);
 
     if (!data) {
-        return (
-            <div className="flex min-h-[50vh] flex-col items-center justify-center text-center">
-                <h1 className="text-2xl font-bold">Article not found</h1>
-                <Link href="/wiki" className="mt-4 text-primary hover:underline">
-                    Return to Wiki
-                </Link>
-            </div>
-        );
+        notFound();
     }
 
     return (
@@ -41,7 +35,7 @@ export default async function WikiArticlePage({ params }: any) {
                     className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                     <ArrowLeft className="h-4 w-4" />
-                    Back to Wiki
+                    Wikiに戻る
                 </Link>
 
                 <article className="rounded-3xl border border-border bg-card p-8 backdrop-blur-sm sm:p-12">

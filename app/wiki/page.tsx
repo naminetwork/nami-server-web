@@ -4,7 +4,7 @@ import { Book } from "lucide-react";
 
 export const metadata = {
     title: "Wiki - Nami Server",
-    description: "Server documentation and guides.",
+    description: "サーバーのドキュメントとガイド",
 };
 
 export default function WikiPage() {
@@ -18,7 +18,7 @@ export default function WikiPage() {
                         Nami Wiki
                     </h1>
                     <p className="mt-4 text-muted-foreground">
-                        Everything you need to know about Nami Server.
+                        Minecraft Namiサーバーの公式サイト
                     </p>
                 </div>
 
