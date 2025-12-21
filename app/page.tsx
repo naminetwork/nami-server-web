@@ -46,12 +46,12 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Minigame Server */}
           <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm transition-all hover:shadow-xl hover:border-primary/50 dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <h3 className="relative mb-6 text-2xl font-bold text-foreground flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-primary" />
               ミニゲーム（ロビー）
             </h3>
-            <div className="space-y-6 text-muted-foreground">
+            <div className="relative space-y-6 text-muted-foreground">
               <div>
                 <h4 className="font-bold text-foreground">■ TNTRUN</h4>
                 <p className="mt-1">足元のブロックがどんどん消えていく中で、最後まで落ちずに走り続けるゲーム。走るルートやスピード、他のプレイヤーとの駆け引きが勝敗を分けます。手に汗にぎる “奈落に落ちたら終了” のサバイバルレース！</p>
@@ -69,19 +69,19 @@ export default function Home() {
 
           {/* Nation Server */}
           <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm transition-all hover:shadow-xl hover:border-primary/50 dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <h3 className="relative mb-6 text-2xl font-bold text-foreground flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-primary" />
               国家サーバー
             </h3>
-            <div className="space-y-4 text-muted-foreground">
+            <div className="relative space-y-4 text-muted-foreground">
               <p>なみ鯖の国家では、土地を買って自分の家や町を作ったり、みんなで国を発展させたりしながら自由に遊べます。</p>
               <p>働いたりお店を開いたりしてお金を貯め、自分の町をどんどん大きくしていく楽しさがあります。</p>
               <p>ワールドは地図で確認できるので、位置関係が分かりやすく、探索や建築計画もしやすい環境です。建国した場所の建物はしっかり保護されているので、壊される心配をせずに安心して建築できます。</p>
               <p>初心者でものんびりと、上級者はとことん発展を目指して、どんな遊び方もOK。チャットはDiscordとも連携しているので、連絡や会話がスムーズです。</p>
               <p className="font-bold text-foreground/90">仲間と一緒に“自分たちの国”を作り上げてみたい人にぴったりのサーバーです！</p>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 relative z-10">
               <a
                 href="http://nami-kokka-map.mcsv.win:3347/"
                 target="_blank"
