@@ -22,14 +22,15 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex justify-center">
-          <Link
+          <a
             href="https://www.youtube.com/@Lunaa_MC"
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-white transition-transform hover:scale-105 shadow-lg hover:shadow-red-600/30"
           >
             <Youtube className="h-5 w-5" />
             公式YouTubeチャンネル
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -81,13 +82,14 @@ export default function Home() {
               <p className="font-bold text-foreground/90">仲間と一緒に“自分たちの国”を作り上げてみたい人にぴったりのサーバーです！</p>
             </div>
             <div className="mt-8">
-              <Link
+              <a
                 href="http://nami-kokka-map.mcsv.win:3347/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary/80 hover:text-primary"
               >
                 国家サーバーマップを見る
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -57,15 +57,25 @@ export function Navbar() {
                     {/* Desktop Interface */}
                     <div className="hidden md:flex md:items-center md:gap-4">
                         {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                target={item.external ? "_blank" : undefined}
-                                rel={item.external ? "noopener noreferrer" : undefined}
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                            >
-                                {item.name}
-                            </Link>
+                            item.external ? (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                                >
+                                    {item.name}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                                >
+                                    {item.name}
+                                </Link>
+                            )
                         ))}
                         <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
                             <button
@@ -111,15 +121,27 @@ export function Navbar() {
                         >
                             <div className="space-y-1 px-4 py-4">
                                 {navItems.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        target={item.external ? "_blank" : undefined}
-                                        onClick={() => setIsOpen(false)}
-                                        className="block rounded-lg px-4 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                                    >
-                                        {item.name}
-                                    </Link>
+                                    item.external ? (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block rounded-lg px-4 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block rounded-lg px-4 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    )
                                 ))}
                             </div>
                         </motion.div>
