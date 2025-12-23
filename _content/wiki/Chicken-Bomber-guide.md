@@ -1,7 +1,7 @@
 ---
 title: "ChickenBomber 使い方ガイド - 鶏型爆弾のPVPゲーム"
 description: "サバイバーとボンバーによる、チキンボンバーを用いたPVPゲームの基本ルールと操作方法を解説します。"
-order: 7
+order: 8
 tags: ["ミニゲーム"]
 ---
 
