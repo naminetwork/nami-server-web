@@ -2,7 +2,7 @@
 title: "Towny 使い方ガイド - 土地保護と町の運営"
 description: "Townyプラグインを使った町作りと経済システムのガイドです"
 order: 2
-tags: ["経済鯖"]
+tags: ["国家鯖"]
 ---
 
 # 🏰 Towny プレイヤー＆市長向けガイド
