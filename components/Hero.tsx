@@ -100,7 +100,7 @@ export function Hero() {
                 </div>
 
                 <Link
-                    href="https://discord.gg/yourinvite"
+                    href="https://discord.com/invite/cd33Z4ts3U"
                     target="_blank"
                     className="flex items-center gap-2 rounded-full bg-primary px-8 py-3 font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:scale-105 active:scale-95 shadow-lg shadow-primary/25"
                 >
