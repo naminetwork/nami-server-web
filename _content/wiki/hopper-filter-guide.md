@@ -165,7 +165,6 @@ OR演算子 `|` は**ANDブロック内でのみ機能**します。
 | ❌ 動作しない | `+unbreaking_3&+fortune_3\|+efficiency_5&+silk_touch` |
 | ✅ 動作する | `+unbreaking_3&+fortune_3,+efficiency_5&+silk_touch` |
 
-将来的には括弧のサポートが追加される可能性があります。
 
 ---
 
