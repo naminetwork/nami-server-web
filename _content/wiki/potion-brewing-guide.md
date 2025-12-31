@@ -1,6 +1,6 @@
 ---
 title: "ポーション作成ガイド"
-description: "mcMMOの錬金術スキルで作れる全ポーション一覧"
+description: "mcMMOの錬金術スキルで作れる全ポーション一覧!!"
 order: 10
 tags: ["国家鯖"]
 ---
