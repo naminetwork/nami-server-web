@@ -1,3 +1,8 @@
+---
+title: "Nami Earth(国家S3)利用規約"
+order: 4
+---
+
 # NamiEarth 利用規約
 **施行日: 2026年1月17日**
 
