@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "https://www.naminetwork.jp/:path*",
+        destination: "https://www.naminetwork.jp/",
         permanent: true,
       },
     ];
