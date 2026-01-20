@@ -4,3 +4,9 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.naminetwork.jp/:splat"
+  status = 301
+  force = true
